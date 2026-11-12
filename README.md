@@ -1,14 +1,6 @@
 # Decision-Oriented Learning for Day-Ahead Cascading-Failure Early Warning and Area-Targeted Preventive Load Shedding
 
-Source code for the paper submitted to *IEEE Transactions on Smart Grid*.
-It reproduces all tables and figures: the IEEE 39-, 118- and 300-bus systems, driven by Open Power System Data (OPSD).
 
-## Method in one paragraph
-For every hour of the next day, a **physics layer** runs a DC power flow on the planned topology. It also computes LODF-based N−1 post-contingency
-loadings with heat-derated line limits. An **action-conditioned LightGBM model** then predicts the expected cascade load loss for each of
-13 options: no action, or shedding 2/4/8 % of the load in one of four areas. The model reports the no-action prediction as the **early warning**.
-It selects the option that minimises *shed load + λ · predicted loss* as the **preventive shedding decision**. λ is tuned on validation
-decisions. Training labels come from a Monte Carlo DC cascade simulator with storm-dependent outage rates, heat derating and planned maintenance.
 
 ## Requirements
 - Python 3.11 or newer (results produced with Python 3.13)
